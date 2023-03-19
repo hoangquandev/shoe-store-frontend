@@ -62,7 +62,7 @@ const ProductDetails = ({ product, products }) => {
                             {p.original_price && (
                                 <>
                                     <p className="text-base  font-medium line-through">
-                                        &#8377;{p.original_price.toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}
+                                        {p.original_price.toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}
                                     </p>
                                     <p className="ml-auto text-base font-medium text-green-500">
                                         {getDiscountedPricePercentage(
