@@ -11,12 +11,14 @@ import { addToCart } from "@/store/cartSlice";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Head from "next/head";
 
 const ProductDetails = ({ product, products }) => {
     const [selectedSize, setSelectedSize] = useState();
     const [showError, setShowError] = useState(false);
     const dispatch = useDispatch();
     const p = product?.data?.[0]?.attributes;
+    console.log(p);
 
     const notify = () => {
         toast.success("Success. Check your cart!", {
@@ -33,6 +35,17 @@ const ProductDetails = ({ product, products }) => {
 
     return (
         <div className="w-full md:py-20">
+            <Head>
+                <title>{p.name}</title>
+                <meta name="description" content={p.description} />
+                <meta name="keywords" content={p.namne} />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                {/* Open Graph */}
+                <meta property="og:title" content={p.name} />
+                <meta property="og:description" content={p.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:image" content={p.thumbnail} />
+            </Head>
             <ToastContainer />
             <Wrapper>
                 <div className="flex flex-col lg:flex-row md:px-10 gap-[50px] lg:gap-[100px]">
@@ -104,8 +117,8 @@ const ProductDetails = ({ product, products }) => {
                                     <div
                                         key={i}
                                         className={`border rounded-md text-center py-3 font-medium ${item.enabled
-                                                ? "hover:border-black cursor-pointer"
-                                                : "cursor-not-allowed bg-black/[0.1] opacity-50"
+                                            ? "hover:border-black cursor-pointer"
+                                            : "cursor-not-allowed bg-black/[0.1] opacity-50"
                                             } ${selectedSize === item.size
                                                 ? "border-black"
                                                 : ""
