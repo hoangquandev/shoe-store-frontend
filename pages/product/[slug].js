@@ -43,7 +43,7 @@ const ProductDetails = ({ product, products }) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 {/* Open Graph */}
                 <meta property="og:title" content={p.name} />
-                <meta property="og:description" content={p.description} />
+                <meta property="og:description" content={p?.description} />
                 <meta property="og:type" content="website" />
                 {p && <meta property="og:image" content={p.thumbnail.data.attributes.url} />}
             </Head>
