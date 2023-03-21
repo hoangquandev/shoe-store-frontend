@@ -18,6 +18,7 @@ const ProductDetails = ({ product, products }) => {
     const [showError, setShowError] = useState(false);
     const dispatch = useDispatch();
     const p = product?.data?.[0]?.attributes;
+    // console.log(p.thumbnail.data.attributes.url);
     // console.log(p);
 
     const notify = () => {
@@ -44,7 +45,7 @@ const ProductDetails = ({ product, products }) => {
                 <meta property="og:title" content={p.name} />
                 <meta property="og:description" content={p.description} />
                 <meta property="og:type" content="website" />
-                <meta property="og:image" content={p.thumbnail.data.attributes.url} />
+                {p && <meta property="og:image" content={p.thumbnail.data.attributes.url} />}
             </Head>
             <ToastContainer />
             <Wrapper>
