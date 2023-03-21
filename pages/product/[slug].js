@@ -44,7 +44,7 @@ const ProductDetails = ({ product, products }) => {
                 <meta property="og:title" content={p.name} />
                 <meta property="og:description" content={p.description} />
                 <meta property="og:type" content="website" />
-                <meta property="og:image" content={p.thumbnail} />
+                <meta property="og:image" content={p.thumbnail.data.attributes.url} />
             </Head>
             <ToastContainer />
             <Wrapper>
