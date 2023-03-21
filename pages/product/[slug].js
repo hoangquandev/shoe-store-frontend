@@ -18,7 +18,7 @@ const ProductDetails = ({ product, products }) => {
     const [showError, setShowError] = useState(false);
     const dispatch = useDispatch();
     const p = product?.data?.[0]?.attributes;
-    console.log(p);
+    // console.log(p);
 
     const notify = () => {
         toast.success("Success. Check your cart!", {
@@ -38,7 +38,7 @@ const ProductDetails = ({ product, products }) => {
             <Head>
                 <title>{p.name}</title>
                 <meta name="description" content={p.description} />
-                <meta name="keywords" content={p.namne} />
+                <meta name="keywords" content={p.name} />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 {/* Open Graph */}
                 <meta property="og:title" content={p.name} />
